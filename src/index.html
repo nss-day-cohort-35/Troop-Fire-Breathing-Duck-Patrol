@@ -2,22 +2,6 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./styles/main.css">
-    <title>Document</title>
-</head>
-<header>
-
-</header>
-
-<body>
-    <article id="container"></article>
-    <script src="main.js"></script>
-</body>
-
-</html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -31,17 +15,22 @@
         <img src="src/images/boyScoutsOld.jpg" alt="boyscouts" id="headerImage">
     </header>
 
-    <h2>Welcome to Scout's Honor</h2>
+    <h1>Welcome to Scout's Honor</h1>
 
     <!--log in/ sign up container-->
-    <div id="welcomeFormContainer"></div>
-    <form id="friendsId" action="">
-        <input type="userEmail" name="userEmail" id="userEmail"></h2>
-        <input type="userPass" name="userPass" id="userPass"></h2>
-        <input type="confirmPass" name="confirmPass" id="confirmPass"></h2>
+    <div id="welcomeFormContainer">
+        <h2>Sign Up/Log In  To Join Your Troop:</h2>
+    </div>
+    <form id="userId" action="">
+            <h3>Email:</h3>
+        <input type="userEmail" name="userEmail" id="userEmailId"></h2>
+        <h3>Password:</h3>
+        <input type="userPass" name="userPass" id="userPassId"></h2>
+        <h3> Confirm Password:</h3>
+        <input type="confirmPass" name="confirmPass" id="confirmPassId"></h2>
         <div>
-            <button type="button" class="btn" id="buttonAddEntry">
-            <p>Add Entry</p>
+            <button type="button" class="btn" id="addUserButton">
+            <p>Sign Up</p>
          </button>
     </form>
     </div>
@@ -82,7 +71,8 @@
         <article id="eventsDisplay">
         </article>
     </div>
-
+    <section class="userList"></section>
+    <button id="showUsers" class="button">butt</button>
 </body>
 <footer>
     <p>&copy; TFBDP</p>
@@ -107,6 +97,6 @@
         </li>
     </ul>
 </footer>
-
+<script type="module" src="src/scripts/auth/eventListeners.js"></script>
 
 </html>

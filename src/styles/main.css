@@ -27,3 +27,18 @@
         margin-right: auto;
         width: 70%;
     }
+
+    #addUserButton {
+        background-color: navy;
+        color: white;
+    }
+
+    #friendsId {
+        border-color: navy;
+        border-style: solid;
+        margin-right: 75%;
+    }
+
+    body {
+        background-color: tan;
+    }
