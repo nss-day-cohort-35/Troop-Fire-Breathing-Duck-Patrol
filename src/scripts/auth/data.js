@@ -42,4 +42,9 @@ saveUserInfo: user => {
 
 
 
+
+//use fetch to create journal entry
+
+
+
 export default API;
