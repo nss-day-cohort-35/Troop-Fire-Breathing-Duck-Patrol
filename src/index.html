@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet" href="./styles/main.css">
-<title>Troop Fire Breathing Duck Patrol</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./styles/main.css">
+    <title>Troop Fire Breathing Duck Patrol</title>
 </head>
 
 <body>
@@ -19,10 +19,10 @@
 
     <!--log in/ sign up container-->
     <div id="welcomeFormContainer">
-        <h2>Sign Up/Log In  To Join Your Troop:</h2>
+        <h2>Sign Up/Log In To Join Your Troop:</h2>
     </div>
     <form id="userId" action="">
-            <h3>Email:</h3>
+        <h3>Email:</h3>
         <input type="userEmail" name="userEmail" id="userEmailId"></h2>
         <h3>Password:</h3>
         <input type="userPass" name="userPass" id="userPassId"></h2>
@@ -71,32 +71,57 @@
         <article id="eventsDisplay">
         </article>
     </div>
-    <section class="userList"></section>
-    <button id="showUsers" class="button">butt</button>
+
+    <!-- event page starts -->
+    <form>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="eventTitle">Event</label>
+                <input type="title" class="eventTitleClass" id="eventTitleId" placeholder="Title">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="eventAddress">Address</label>
+                <input type="address" class="eventAddressClass" id="eventAddressId" placeholder="Address">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="eventDate">Date</label>
+            <input type="date" class="eventDateClass" id="eventDateId" placeholder="Date">
+        </div>
+        <div class="form-group">
+            <label for="eventDescription">Description</label>
+            <textarea id=“eventDescriptionId” rows=“10 " cols=“40”name=“event description”></textarea>
+        </div>
+        <button type="submit " class="btn btn-primary ">Submit</button>
+    </form>
+
+
+    <section class="userList "></section>
+    <button id="showUsers " class="button ">butt</button>
 </body>
 <footer>
     <p>&copy; TFBDP</p>
-    <ul class="footer-links">
+    <ul class="footer-links ">
         <li>
-            <a href="https://www.scouting.org/"><img class="baby" src="styles/images/boyscoutslogo.jpg" alt="Boy Scouts Homepage" style="width:42px;height:42px;border:0;"></a>
+            <a href="https://www.scouting.org/ "><img class="baby " src="src/images/boyscoutslogo.jpg " alt="Boy Scouts Homepage " style="width:42px;height:42px;border:0; "></a>
         </li>
         <li>
-            <a href="https://www.instagram.com/boyscoutsofamerica/?hl=en"><img class="baby" src="styles/images/instagram.png" alt="Boy Scouts Instagram" style="width:42px;height:42px;border:0;"></a>
+            <a href="https://www.instagram.com/boyscoutsofamerica/?hl=en "><img class="baby " src="src/images/instagram.png " alt="Boy Scouts Instagram " style="width:42px;height:42px;border:0; "></a>
         </li>
         <li>
-            <a href="https://www.youtube.com/channel/UCbFEBamXVItp6yWqzJvfYFg"><img class="baby" src="styles/images/youtube.png" alt="Boy Scouts Youtube channel" style="width:42px;height:42px;border:0;"></a>
+            <a href="https://www.youtube.com/channel/UCbFEBamXVItp6yWqzJvfYFg "><img class="baby " src="src/images/youtube.png " alt="Boy Scouts Youtube channel " style="width:42px;height:42px;border:0; "></a>
         </li>
         <li>
-            <a href="https://twitter.com/boyscouts?lang=en"><img class="baby" src="styles/images/twitter.png" alt="Boy Scouts Twitter" style="width:42px;height:42px;border:0;"></a>
+            <a href="https://twitter.com/boyscouts?lang=en "><img class="baby " src="src/images/twitter.png " alt="Boy Scouts Twitter " style="width:42px;height:42px;border:0; "></a>
         </li>
         <li>
-            <a href="https://www.facebook.com/theboyscoutsofamerica/"><img class="baby" src="styles/images/facebook.png" alt="Boy Scouts Facebook" style="width:42px;height:42px;border:0;"></a>
+            <a href="https://www.facebook.com/theboyscoutsofamerica/ "><img class="baby " src="src/images/facebook.png " alt="Boy Scouts Facebook " style="width:42px;height:42px;border:0; "></a>
         </li>
         <li>
-            <a href="https://github.com/nss-day-cohort-35/Troop-Fire-Breathing-Duck-Patrol"><img class="baby" src="styles/images/firebreathingduck.png" alt="github logo" style="width:42px;height:42px;border:0;"></a>
+            <a href="https://github.com/nss-day-cohort-35/Troop-Fire-Breathing-Duck-Patrol "><img class="baby " src="src/images/firebreathingduck.png " alt="github logo " style="width:42px;height:42px;border:0; "></a>
         </li>
     </ul>
 </footer>
-<script type="module" src="src/scripts/auth/eventListeners.js"></script>
+<script type="module " src="src/scripts/auth/eventListeners.js "></script>
 
 </html>
