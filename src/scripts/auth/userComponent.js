@@ -10,6 +10,6 @@ const webComp = {
            <button class="button2" type="button" id="deleteUser--${user.id}">Delete</button>
        </div>
        `
-   },
+   }
 }
    export default webComp
