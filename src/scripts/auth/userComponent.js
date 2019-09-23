@@ -11,5 +11,14 @@ const webComp = {
        </div>
        `
    },
+   newFeedsComponent: (news) => {
+       return `
+   <div>
+   <h2>${news.newsTitleId}</h2>
+   <p>${news.newsSynopsisId}</p>
+   <p>${news.newsUrlId}</p>
+   </div>
+   `
+   }
 }
    export default webComp
