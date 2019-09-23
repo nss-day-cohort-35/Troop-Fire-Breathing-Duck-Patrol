@@ -1,5 +1,5 @@
 
-const webComp = { 
+const webComp = {
 
     makeUserComponent: (user) =>{
        return `
