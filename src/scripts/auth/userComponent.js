@@ -10,15 +10,6 @@ const webComp = {
            <button class="button2" type="button" id="deleteUser--${user.id}">Delete</button>
        </div>
        `
-   },
-   newFeedsComponent: (news) => {
-       return `
-   <div>
-   <h2>${news.newsTitleId}</h2>
-   <p>${news.newsSynopsisId}</p>
-   <p>${news.newsUrlId}</p>
-   </div>
-   `
    }
 }
    export default webComp

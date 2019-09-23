@@ -1,17 +1,10 @@
 import webComp from "./userComponent.js";
+import allFunctions from "../factory.js";
 
 const DOM = {
-
-    renderUserInfo: (users) =>{
-        for (let i = 0; i < users.length; i++) {
-            document.querySelector(".userList").innerHTML += webComp.makeUserComponent(users[i])
-        }
-    },
-    renderNewsInfo:  (users) =>{
-        for (let i = 0; i < users.length; i++) {
-            document.querySelector(".userList").innerHTML += webComp.newsFeedComponent(users[i])
-        }
-    }
+    renderLandingPage: () =>{
+    let mainContainer = document.querySelector("#container")
+    mainContainer.innerHTML = allFunctions.homePage();
 }
-
+}
 export default DOM
