@@ -7,6 +7,6 @@ const DOM = {
             document.querySelector(".userList").innerHTML += webComp.makeUserComponent(users[i])
         }
     },
-} 
+}
 
 export default DOM
