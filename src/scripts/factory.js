@@ -2,8 +2,8 @@ const allFunctions = {
     homePage () {
 return `
         <div id="navButtons">
-        <button type="button id="dashboardButton">Home Page</button>
-    <button type="button id="dashboardButton">Sign Up/Log In</button>
+        <button type="button" id="dashboardButton">Home Page</button>
+    <button type="button" id="signInButton">Sign Up/Log In</button>
     </div>
 `
     },
@@ -24,8 +24,6 @@ return `
         <div>
             <button type="button" class="btn" id="addUserButton">  Sign Up
             </button>
-            Sign Up
-         </button>
     </form>
 </div>
     </div>
@@ -42,13 +40,9 @@ logInForm () {
   <input type="userEmail" name="userEmail" id="userEmailId" placeholder="Email"></h2>
   <h3>Password:</h3>
   <input type="userPass" name="userPass" id="userPassId" placeholder="Password"></h2>
-  <h3> Confirm Password:</h3>
-  <input type="confirmPass" name="confirmPass" id="confirmPassId" placeholder="Confirm Password"></h2>
   <div>
       <button type="button" class="btn" id="addUserButton">  Log In
       </button>
-      Sign Up
-   </button>
 </form>
 </div>
 </div>
