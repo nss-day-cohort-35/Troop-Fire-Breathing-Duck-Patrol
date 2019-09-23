@@ -5,6 +5,7 @@ const API = {
 getUserInfo: () => {
     return fetch("http://localhost:8088/users")
         .then(response => response.json())
+
 },
 
 // deleteUserInfo: (id) => {
@@ -36,7 +37,7 @@ saveUserInfo: user => {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(user)
-    });
+    })
 }
 }
 
