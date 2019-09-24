@@ -17,6 +17,19 @@ const DOM = {
                 sessionStorage.setItem("user", res.id)
                 // const getUserId = sessionStorage.getItem("user")
                 mainContainer.innerHTML += allFunctions.dashboard();
+                        document.querySelector("#navButtons").innerHTML = " ";
+                        document.querySelector("#welcomeFormContainer").innerHTML = " ";
+                        document.querySelector("#loginFormContainer").innerHTML = " ";
+            })
+        })
+        document.querySelector("#logInButton").addEventListener("click", () => {
+            API.saveUserInfo().then(res => res.json()).then(res => {
+                sessionStorage.setItem("user", res.id)
+                // const getUserId = sessionStorage.getItem("user")
+                mainContainer.innerHTML += allFunctions.dashboard();
+                document.querySelector("#navButtons").innerHTML = " ";
+                document.querySelector("#welcomeFormContainer").innerHTML = " ";
+                document.querySelector("#loginFormContainer").innerHTML = " ";
             })
         })
     })

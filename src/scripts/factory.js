@@ -32,7 +32,7 @@ return `
 logInForm () {
     return `
 <!--log in container-->
-<div id="welcomeFormContainer">
+<div id="loginFormContainer">
   <h2>Log In To Join Your Troop:</h2>
 <form id="userId" action="">
   <h3>Email:</h3>
@@ -40,7 +40,7 @@ logInForm () {
   <h3>Password:</h3>
   <input type="userPass" name="userPass" id="userPassId" placeholder="Password"></h2>
   <div>
-      <button type="button" class="btn" id="addUserButton">  Log In
+      <button type="button" class="btn" id="logInButton">  Log In
       </button>
 </form>
 </div>
