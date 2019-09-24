@@ -2,7 +2,6 @@ const allFunctions = {
     homePage () {
 return `
         <div id="navButtons">
-        <button type="button" id="dashboardButton">Home Page</button>
     <button type="button" id="signInButton">Sign Up/Log In</button>
     </div>
 `

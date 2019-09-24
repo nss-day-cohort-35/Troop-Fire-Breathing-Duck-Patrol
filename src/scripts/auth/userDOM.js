@@ -1,5 +1,7 @@
 import webComp from "./userComponent.js";
 import allFunctions from "../factory.js";
+import API from "./data.js";
+
 // innerHTML for putting things on the DOM
 const DOM = {
     renderLandingPage: () =>{
@@ -9,7 +11,17 @@ const DOM = {
     document.querySelector("#signInButton").addEventListener("click", () => {
         mainContainer.innerHTML += allFunctions.signUpForm()
         mainContainer.innerHTML += allFunctions.logInForm()
+
+        document.querySelector("#addUserButton").addEventListener("click", () => {
+            API.saveUserInfo().then(res => res.json()).then(res => {
+                sessionStorage.setItem("user", res.id)
+                // const getUserId = sessionStorage.getItem("user")
+                mainContainer.innerHTML += allFunctions.dashboard();
+            })
+        })
     })
+    // // stores the login and password in session storage
+
 }
 }
 export default DOM
