@@ -19,11 +19,12 @@ const DOM = {
                     let userPass = document.querySelector("#userPassId").value;
                     let confirmPass = document.querySelector("#confirmPassId").value;
                     const userObject = {
-                        userName: userName,
                         userEmail: userEmail,
                         userPassword: userPass,
                         confirmPassword: confirmPass,
                     }
+                    //  Api call for session storage. hides events input forms. alert welcome to troop.
+                    // clears off log in and signup forms. puts dashboard on dom.
                     API.saveUserInfo(userObject).then(res => res.json()).then(res => {
                         sessionStorage.setItem("user", res.id),
                             mainContainer.innerHTML += allFunctions.dashboard()
@@ -33,13 +34,16 @@ const DOM = {
                         document.querySelector("#welcomeFormContainer").innerHTML = " ";
                         document.querySelector("#loginFormContainer").innerHTML = " ";
                     })
+                    // log in input fields. defines email and password from api call
                 }), document.querySelector("#logInButton").addEventListener("click", () => {
                     let email = document.querySelector("#userLoginEmail").value;
                     let password = document.querySelector("#userLoginPassword").value;
                     console.log(email, password)
+                    // api call for single user stored in database. hides events input forms.
+                    // alert welcome to troop. clears off log in and signup forms. puts dashboard on dom.
                     API.getSingleUsersInfo(email, password).then(res => {
                         console.log(res);
-                        sessionStorage.setItem("user", res.id)
+                        sessionStorage.setItem("user", res[0].id)
                         mainContainer.innerHTML += allFunctions.dashboard();
                         document.getElementById("eventPageContainer").style.visibility = "hidden";
                         alert("Welcome troop member!")
@@ -49,33 +53,7 @@ const DOM = {
                     })
                 })
             })
-            // // stores the login and password in session storage
-
     }
 }
-
-// document.querySelector("#addUserButton").addEventListener("click", () => {
-//     let userEmail = document.querySelector("#userEmailId").value;
-//     let userPass = document.querySelector("#userPassId").value;
-//     let confirmPass = document.querySelector("#confirmPassId").value;
-//     const userObject = {
-//         userEmail: userEmail,
-//         userPassword: userPass,
-//         confirmPassword: confirmPass,
-
-//     }
-//     console.log(userObject)
-//         //stores the login and password in session storage
-//     API.saveUserInfo(userObject).then(res => res.json()).then(res => {
-//         sessionStorage.setItem("user", res.id)
-//         const getUserId = sessionStorage.getItem("user")
-//             //removes the entire input field
-//         document.querySelector("#welcomeFormContainer").innerHTML = " ";
-//         //alerts the user "welcome"
-//         alert("Welcome to the troop!")
-//             // console.log(getUserId)
-//     })
-// })
-
 
 export default DOM
