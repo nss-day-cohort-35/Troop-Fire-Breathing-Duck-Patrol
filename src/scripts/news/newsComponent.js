@@ -5,6 +5,7 @@ const webCompNews = {
        <form>
         <fieldset>
            <h2>${article.newsTitle}</h2>
+           <p>${article.userId}</p>
            <p>${article.newsSynopsis}</p>
            <p>${article.newsURL}</p>
         </fieldset>
@@ -20,6 +21,7 @@ const webCompNews = {
     return `
     <form>
         <section id="eNewsTitle">${article.eNewsTitle}</section>
+        <p>${article.eUserId}</p>
         <section id="eNewsSynopsis">${article.eNewsSynopsis}</section>
         <section id="eNewsUrl">${article.eNewsUrl}</section>
         <button id="eSaveNews">Save News</button>

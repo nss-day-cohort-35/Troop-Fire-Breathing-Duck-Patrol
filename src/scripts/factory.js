@@ -67,6 +67,7 @@ const allFunctions = {
     <div id="newsFeedContainer">
         <!-- display all the user's newsfeed-->
         <h2 class="newsHeader">Scout's Bulletin Board</h2>
+        <button type="button" id="showNewsButton">Get News</button>
         <article id="newsDisplay">
         </article>
     <!-- newsfeed page starts -->
@@ -85,7 +86,7 @@ const allFunctions = {
             <label for="newsUrl">Url</label>
             <input type="url" class="newsUrl" id="newsUrlId" placeholder="url">
         </div>
-        <button type="button" id="newsButton" class="btn btn-primary">Submit</button>
+        <button type="button" id="newsButton">Submit</button>
     </form>
 </div>
 
