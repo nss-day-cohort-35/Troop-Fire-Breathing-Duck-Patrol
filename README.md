@@ -1,3 +1,7 @@
+https://nashvillesoftware.slack.com/archives/GN49W0GPL/p1569439370000800
+
+
+
 # Nutshell: The Information Dashboard
 
 ## Setup: Follow these steps exactly
