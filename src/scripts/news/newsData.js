@@ -16,8 +16,13 @@ const newsAPI = {
             .then(response => response.json())
     },
 
-    editNews: (id, updatedNews) => {
-        console.log(id, updatedNews);
+    editNews: (id) => {
+        const updatedNews = {
+            newsTitle: document.querySelector("#eNewsTitleId").value,
+            newsSynopsis: document.querySelector("#eNewsSynopsisId").value,
+            newsURL: document.querySelector("#eNewsUrlId").value
+        };
+console.log(updatedNews);
         return fetch(`http://localhost:8088/news/${id}`, {
             method: "PATCH",
             headers: {

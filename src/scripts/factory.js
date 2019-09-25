@@ -88,7 +88,34 @@ const allFunctions = {
         </div>
         <button type="button" id="newsButton">Submit</button>
     </form>
+
+
+
+    <form id="editNewsContainer">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="newsTitle">Title</label>
+            <input type="title" id="eNewsTitleId" placeholder="Title">
+            <input type="hidden" id="newsHiddenId">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="newsSynopsis">Synopsis</label>
+            <input type="synopsis" id="eNewsSynopsisId" placeholder="Synopsis">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="newsUrl">Url</label>
+        <input type="url" id="eNewsUrlId" placeholder="url">
+    </div>
+    <button type="button" id="updateNews">Update</button>
+    <button type="button" id="hey">Butt</button>
+</form>
 </div>
+
+
+
+
+
 
     <div id="tasksContainer">
         <!-- display all the user's tasks -->
@@ -106,28 +133,7 @@ const allFunctions = {
     </div>
 
     <!-- event page starts -->
-    <button id="createEventButton" type="button">Create New Event</button>
-    <form id="eventPageContainer">
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="eventTitle">Event</label>
-                <input type="title" class="eventTitleClass" id="eventTitleId" placeholder="Title">
-            </div>
-            <div class="form-group col-md-6">
-                <label for="eventAddress">Address</label>
-                <input type="address" class="eventAddressClass" id="eventAddressId" placeholder="Address">
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="eventDate">Date</label>
-            <input type="date" class="eventDateClass" id="eventDateId" placeholder="Date">
-        </div>
-        <div class="form-group">
-            <label for="eventDescription">Description</label>
-            <textarea id=“eventDescriptionId” rows="10" cols=“40” name="event" description”></textarea>
-        </div>
-        <button class="btn btn-primary" type="button">Submit</button>
-    </form>
+
 
     <section class="userList"></section>
 </body> `

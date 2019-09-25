@@ -44,26 +44,50 @@ if (sessionStorage.getItem("user") === null) {
     })
     }
 
+document.querySelector("#container").addEventListener("click", (event) => {
+// document.getElementById("editNewsContainer").style.visibility = "hidden";
+    if (event.target.id.startsWith("deleteNews--")) {
+        document.querySelector("#container").innerHTML = "";
+        newsAPI.deleteNews(event.target.id.split("--")[1])
+        .then(() => {
+            newsAPI.getNews().then(data => newsDOM.renderNewsComponent(data));
+        })
+    } else if (event.target.id.startsWith("editNews")) {
+        let editId = event.target.id.split("--")[1];
 
-    // hides events page
-    // document.getElementById("eventPageContainer").style.visibility = "hidden";
-    // document.querySelector("#createEventButton").addEventListener("click", () => {
-    //     API.saveUserInfo().then(res => res.json()).then(res => {
-    //         sessionStorage.setItem("user", res.id)
-    //             // const getUserId = sessionStorage.getItem("user")
-    //         let mainContainer = document.querySelector("#container")
-    //         mainContainer.innerHTML += document.querySelector("#eventPageContainer")
-    //     })
+        newsAPI.getSingleNews(editId).then(data => {
+            document.querySelector("#eNewsTitleId").value = data.newsTitle
+            document.querySelector("#eNewsSynopsisId").value = data.newsSynopsis
+            document.querySelector("#eNewsUrlId").value = data.newsURL
+            document.querySelector("#newsHiddenId").value = data.id
+
+        })
+    }
+    }
+)
+document.querySelector("#hey").addEventListener("click", (event) => {
+console.log(event.target);
+    // let newsTitle = document.querySelector("#eNewsTitleId").value;
+    // let newsSynopsis = document.querySelector("#eNewsSynopsisId").value;
+    // let newsURL = document.querySelector("#eNewsUrlId").value;
+    // const editNewsObject = {
+    //     newsTitle: newsTitle,
+    //     newsSynopsis: newsSynopsis,
+    //     newsURL: newsURL
     // }
+const hiddenNews = document.querySelector("#newsHiddenId").value;
+console.log(hiddenNews);
+        newsAPI.editNews(hiddenNews).then(() => {
+        newsAPI.getNews().then(data => {
+            document.querySelector("#container").innerHTML = " ";
+            newsDOM.renderNewsComponent(data);
+        })
+    })
+})
+// document.querySelector("#updateNews").addEventListener("click", (event) => {
+//     console.log("editNewsObject")
+//     newsAPI.saveNews(editNewsObject).then(res => {
+//         newsAPI.getNews().then(res => {
+//             newsDOM.renderNewsComponent(res);
+//
 
-
-
-
-    //     sessionStorage.setItem("user", res.id),
-    //         mainContainer.innerHTML += allFunctions.dashboard()
-    //     document.getElementById("eventPageContainer").style.visibility = "hidden";
-    //     alert("Welcome to the troop!")
-    //     document.querySelector("#navButtons").innerHTML = " ";
-    //     document.querySelector("#welcomeFormContainer").innerHTML = " ";
-    //     document.querySelector("#loginFormContainer").innerHTML = " ";
-    // })
