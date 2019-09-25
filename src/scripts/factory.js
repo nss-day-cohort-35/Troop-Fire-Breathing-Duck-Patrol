@@ -1,19 +1,17 @@
 const allFunctions = {
-    homePage () {
-return `
+    homePage() {
+        return `
         <div id="navButtons">
     <button type="button" id="signInButton">Sign Up/Log In</button>
     </div>
 `
     },
-    signUpForm () {
-          return `
+    signUpForm() {
+        return `
 <!--sign up container-->
     <div id="welcomeFormContainer">
         <h2>Sign Up To Join Your Troop:</h2>
     <form id="userId" action="">
-        <h3>Username:</h3>
-        <input type="userNamel" name="userName" id="userName" placeholder="Username"></h2>
         <h3>Email:</h3>
         <input type="userEmail" name="userEmail" id="userEmailId" placeholder="Email"></h2>
         <h3>Password:</h3>
@@ -28,17 +26,18 @@ return `
     </div>
     </div>
 
-`},
-logInForm () {
-    return `
+`
+    },
+    logInForm() {
+        return `
 <!--log in container-->
 <div id="loginFormContainer">
-  <h2>Log In To Join Your Troop:</h2>
+  <h2>Log In Troop Member:</h2>
 <form id="userId" action="">
   <h3>Email:</h3>
-  <input type="userEmail" name="userEmail" id="userEmailId" placeholder="Email"></h2>
+  <input type="userEmail" name="userEmail" id="userLoginEmail" placeholder="Email"></h2>
   <h3>Password:</h3>
-  <input type="userPass" name="userPass" id="userPassId" placeholder="Password"></h2>
+  <input type="userPass" name="userPass" id="userLoginPassword" placeholder="Password"></h2>
   <div>
       <button type="button" class="btn" id="logInButton">  Log In
       </button>
@@ -47,9 +46,10 @@ logInForm () {
 </div>
 </div>
 
-`},
-dashboard () {
-    return `
+`
+    },
+    dashboard() {
+        return `
     <div id="friendsListContainter">
         <!-- display all the user's friends -->
         <h2 class="friendsHeader">Troop Members</h2>
@@ -105,7 +105,8 @@ dashboard () {
     </div>
 
     <!-- event page starts -->
-    <form>
+    <button id="createEventButton" type="button">Create New Event</button>
+    <form id="eventPageContainer">
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="eventTitle">Event</label>
@@ -129,6 +130,6 @@ dashboard () {
 
     <section class="userList"></section>
 </body> `
-}
+    }
 }
 export default allFunctions
