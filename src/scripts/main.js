@@ -4,7 +4,25 @@ import allFunctions from "./factory.js"
 import newsAPI from "./news/newsData.js"
 import newsDOM from "./news/newsDOM.js"
 
-
+const newsSubmit = () => {document.querySelector("#newsButton").addEventListener("click", () => {
+    console.log("newsSubmitTrigger")
+   let newsTitle = document.querySelector("#newsTitleId").value;
+       let userId = parseInt(sessionStorage.getItem("user"))
+       let newsSynopsis = document.querySelector("#newsSynopsisId").value;
+       let newsURL = document.querySelector("#newsUrlId").value;
+       const newsObject = {
+           newsTitle: newsTitle,
+           userId: userId,
+           newsSynopsis: newsSynopsis,
+           newsURL: newsURL
+       }
+       newsAPI.saveNews(newsObject).then(res => {
+           newsAPI.getNews().then(res => {
+               newsDOM.renderNewsComponent(res);
+           }
+           )
+       })
+   })}
 // function that puts dashboard on the dom
 const dashboardDOM = () => {
     let mainContainer = document.querySelector("#container")
@@ -17,6 +35,7 @@ if (sessionStorage.getItem("user") === null) {
     DOM.renderLandingPage();
 } else {
     dashboardDOM();
+    newsSubmit()
     document.querySelector("#showNewsButton").addEventListener("click", () => {
         newsAPI.getNews().then(data => {
             newsDOM.renderNewsComponent(data);
@@ -24,6 +43,8 @@ if (sessionStorage.getItem("user") === null) {
 
     })
     }
+
+
     // hides events page
     // document.getElementById("eventPageContainer").style.visibility = "hidden";
     // document.querySelector("#createEventButton").addEventListener("click", () => {
@@ -35,24 +56,7 @@ if (sessionStorage.getItem("user") === null) {
     //     })
     // }
 
-    document.querySelector("#newsButton").addEventListener("click", () => {
-    let newsTitle = document.querySelector("#newsTitle").value;
-        let userId = document.querySelector("#userId").value;
-        let newsSynopsis = document.querySelector("#newsSynopsis").value;
-        let newsURL = document.querySelector("#newsURL").value;
-        const newsObject = {
-            newsTitle: newsTitle,
-            userId: userId,
-            newsSynopsis: newsSynopsis,
-            newsURL: newsURL
-        }
-        newsAPI.saveNews(newsObject).then(res => {
-            newsAPI.getNews().then(res => {
-                newsDOM.renderNewsComponent(res);
-            }
-            )
-        })
-    })
+
 
 
     //     sessionStorage.setItem("user", res.id),

@@ -27,13 +27,13 @@ const newsAPI = {
         }).then(response => response.json())
      },
 
-    saveNews: article => {
+    saveNews: (article) => {
         return fetch("http://localhost:8088/news", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(article)
+             body: JSON.stringify(article)
         });
     }
 }
