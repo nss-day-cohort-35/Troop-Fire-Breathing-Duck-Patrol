@@ -45,7 +45,6 @@ if (sessionStorage.getItem("user") === null) {
     }
 
 document.querySelector("#container").addEventListener("click", (event) => {
-// document.getElementById("editNewsContainer").style.visibility = "hidden";
     if (event.target.id.startsWith("deleteNews--")) {
         document.querySelector("#container").innerHTML = "";
         newsAPI.deleteNews(event.target.id.split("--")[1])
@@ -67,14 +66,7 @@ document.querySelector("#container").addEventListener("click", (event) => {
 )
 document.querySelector("#buttButton").addEventListener("click", (event) => {
 console.log(event.target);
-    // let newsTitle = document.querySelector("#eNewsTitleId").value;
-    // let newsSynopsis = document.querySelector("#eNewsSynopsisId").value;
-    // let newsURL = document.querySelector("#eNewsUrlId").value;
-    // const editNewsObject = {
-    //     newsTitle: newsTitle,
-    //     newsSynopsis: newsSynopsis,
-    //     newsURL: newsURL
-    // }
+ 
 const hiddenNews = document.querySelector("#newsHiddenId").value;
 console.log(hiddenNews);
         newsAPI.editNews(hiddenNews).then(() => {
@@ -84,10 +76,3 @@ console.log(hiddenNews);
         })
     })
 })
-// document.querySelector("#updateNews").addEventListener("click", (event) => {
-//     console.log("editNewsObject")
-//     newsAPI.saveNews(editNewsObject).then(res => {
-//         newsAPI.getNews().then(res => {
-//             newsDOM.renderNewsComponent(res);
-//
-
