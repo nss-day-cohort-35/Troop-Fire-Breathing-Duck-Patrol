@@ -65,7 +65,7 @@ document.querySelector("#container").addEventListener("click", (event) => {
     }
     }
 )
-document.querySelector("#hey").addEventListener("click", (event) => {
+document.querySelector("#buttButton").addEventListener("click", (event) => {
 console.log(event.target);
     // let newsTitle = document.querySelector("#eNewsTitleId").value;
     // let newsSynopsis = document.querySelector("#eNewsSynopsisId").value;

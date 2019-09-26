@@ -108,7 +108,6 @@ const allFunctions = {
         <input type="url" id="eNewsUrlId" placeholder="url">
     </div>
     <button type="button" id="updateNews">Update</button>
-    <button type="button" id="hey">Butt</button>
 </form>
 </div>
 
