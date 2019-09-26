@@ -9,7 +9,6 @@ const webCompNews = {
            <p>${article.newsSynopsis}</p>
            <p>${article.newsURL}</p>
         </fieldset>
-            <button id="saveNews">Save News</button>
            <button class="buttonNews" type="button" id="deleteNews--${article.id}">Delete</button>
            <button class="buttonNews" type="button" id="editNews--${article.id}">Edit</button>
        </form>
@@ -24,7 +23,6 @@ const webCompNews = {
         <p>${article.eUserId}</p>
         <section id="eNewsSynopsis">${article.eNewsSynopsis}</section>
         <section id="eNewsUrl">${article.eNewsUrl}</section>
-        <button id="eSaveNews">Save News</button>
     </form>
 `
     }

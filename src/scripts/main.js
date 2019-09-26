@@ -44,26 +44,35 @@ if (sessionStorage.getItem("user") === null) {
     })
     }
 
+document.querySelector("#container").addEventListener("click", (event) => {
+    if (event.target.id.startsWith("deleteNews--")) {
+        document.querySelector("#container").innerHTML = "";
+        newsAPI.deleteNews(event.target.id.split("--")[1])
+        .then(() => {
+            newsAPI.getNews().then(data => newsDOM.renderNewsComponent(data));
+        })
+    } else if (event.target.id.startsWith("editNews")) {
+        let editId = event.target.id.split("--")[1];
 
-    // hides events page
-    // document.getElementById("eventPageContainer").style.visibility = "hidden";
-    // document.querySelector("#createEventButton").addEventListener("click", () => {
-    //     API.saveUserInfo().then(res => res.json()).then(res => {
-    //         sessionStorage.setItem("user", res.id)
-    //             // const getUserId = sessionStorage.getItem("user")
-    //         let mainContainer = document.querySelector("#container")
-    //         mainContainer.innerHTML += document.querySelector("#eventPageContainer")
-    //     })
-    // }
+        newsAPI.getSingleNews(editId).then(data => {
+            document.querySelector("#eNewsTitleId").value = data.newsTitle
+            document.querySelector("#eNewsSynopsisId").value = data.newsSynopsis
+            document.querySelector("#eNewsUrlId").value = data.newsURL
+            document.querySelector("#newsHiddenId").value = data.id
 
-
-
-
-    //     sessionStorage.setItem("user", res.id),
-    //         mainContainer.innerHTML += allFunctions.dashboard()
-    //     document.getElementById("eventPageContainer").style.visibility = "hidden";
-    //     alert("Welcome to the troop!")
-    //     document.querySelector("#navButtons").innerHTML = " ";
-    //     document.querySelector("#welcomeFormContainer").innerHTML = " ";
-    //     document.querySelector("#loginFormContainer").innerHTML = " ";
-    // })
+        })
+    }
+    }
+)
+document.querySelector("#buttButton").addEventListener("click", (event) => {
+console.log(event.target);
+ 
+const hiddenNews = document.querySelector("#newsHiddenId").value;
+console.log(hiddenNews);
+        newsAPI.editNews(hiddenNews).then(() => {
+        newsAPI.getNews().then(data => {
+            document.querySelector("#container").innerHTML = " ";
+            newsDOM.renderNewsComponent(data);
+        })
+    })
+})
